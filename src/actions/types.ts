@@ -1,0 +1,1 @@
+export const FETCH_LAUNCHES = 'FETH_LAUNCHES';
