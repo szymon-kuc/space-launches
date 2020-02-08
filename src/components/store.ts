@@ -1,18 +1,18 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducer from '../reducers/launchesReducer';
+import thunk from 'redux-thunk';
 
 declare global {
     interface Window { devToolsExtension: any; }
 }
 
-const initialState = {
-    launches: [
+// const initialState = {
+//     launches: [
 
-    ]
-}
+//     ]
+// }
 
 export const store = createStore(
     reducer,
-    initialState,
-    window.devToolsExtension && window.devToolsExtension()
+    applyMiddleware(thunk)
 );

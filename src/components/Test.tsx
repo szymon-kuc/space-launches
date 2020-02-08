@@ -12,7 +12,7 @@ export const Launch: React.FC = () => {
     }, [])
 
     const launches = useSelector((state: any) => state.launches);
-    console.log(launches);
+    console.log(launches[0])
 	return (
         <h1>LOLZ</h1>
 	);
