@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import {I_Launches } from '../interfaces';
 import { useSelector } from 'react-redux';
+import { LaunchEvent } from './LaunchEvent';
 
 export const Live: React.FC = () => {
 
@@ -25,6 +26,7 @@ export const Live: React.FC = () => {
                   <div>
                         <iframe id="ytplayer" src={src} frameBorder="0" allowFullScreen />
                   </div>
+                  <LaunchEvent index={0}/>
             </section>
 	);
 }
