@@ -1,0 +1,17 @@
+body {
+    margin: 0px
+}
+#ytplayer{
+    width: 100%;
+    height: 410px;
+}
+@media only screen and (min-width: 992px) {
+    #ytplayer{
+        width: 720px;
+    }
+  }
+.live-heading {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}

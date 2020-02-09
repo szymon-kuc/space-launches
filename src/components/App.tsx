@@ -1,16 +1,18 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store';
-import { Launch } from './Test';
+import { Menu } from './Menu';
+import { Live } from './Live';
+import '../../assets/css/style.css'
+import { Data } from './Data';
 
 class App extends React.PureComponent {
 	render() {
 		return (
 			<Provider store={store}>
-				<div>
-					<h1>Hello Wosssrld!</h1>
-				</div>
-				<Launch />
+				<Data />
+				<Menu />
+				<Live />
 			</Provider>
 		);
 	}
