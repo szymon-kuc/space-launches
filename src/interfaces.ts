@@ -27,5 +27,6 @@ export interface I_Launch {
 }
 
 export interface I_Launches {
-    launches: Array<I_Launch>
+    launches: Array<I_Launch>,
+    date: Array<I_Launch>
 }

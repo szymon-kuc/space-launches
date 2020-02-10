@@ -1,4 +1,4 @@
-import { FETCH_LAUNCHES } from './types';
+import { FETCH_LAUNCHES, FETCH_LAUNCHES_BY_DATE } from './types';
 
 export const fetchLaunches = () => {
     return (dispatch: any) => {
@@ -11,3 +11,13 @@ export const fetchLaunches = () => {
     }
 }
 
+export const fetchLaunchesByDate = (date: any) => {
+    return (dispatch: any) => {
+        fetch('https://launchlibrary.net/1.3/launch/'+date+"/"+date)
+        .then(res => res.json())
+        .then(res => dispatch({
+            type: FETCH_LAUNCHES_BY_DATE,
+            payload: res.launches
+        }))
+    }
+}

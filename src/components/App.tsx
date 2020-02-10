@@ -5,6 +5,7 @@ import { Menu } from './Menu';
 import { Live } from './Live';
 import '../../assets/css/style.css'
 import { Data } from './Data';
+import { Date } from './Date';
 import { Upcoming } from './Upcoming';
 
 class App extends React.PureComponent {
@@ -15,6 +16,7 @@ class App extends React.PureComponent {
 				<Menu />
 				<Live />
 				<Upcoming />
+				<Date />
 			</Provider>
 		);
 	}
