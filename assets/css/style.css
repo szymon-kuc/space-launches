@@ -1,6 +1,13 @@
 body {
     margin: 0px
 }
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    cursor: none;
+}
 #ytplayer{
     width: 100%;
     height: 410px;

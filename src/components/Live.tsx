@@ -30,7 +30,7 @@ export const Live: React.FC = () => {
                   <div>
                         <iframe id="ytplayer" src={src} frameBorder="0" allowFullScreen />
                   </div>
-                  <LaunchEvent index={0} name={name} date={date} location={location}/>
+                  <LaunchEvent index={0} maxIndex={1} name={name} date={date} location={location}/>
             </section>
 	);
 }

@@ -7,20 +7,18 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 
 interface I_Props {
-    index: number,
+    index: number;
+    maxIndex: number;
     name: any,
     location: any,
-    date: any
+    date: any,
+    id?: string
 }
 
-export const LaunchEvent: React.FC<I_Props> = ({index, name, location, date}) => {
+export const LaunchEvent: React.FC<I_Props> = ({ index, maxIndex, name, location, date, id}) => {
 
-    //const launches = useSelector((state: I_Launches) => state.launches);
-    //const name = launches.map((el: I_Launch) => (el.name))[index];
-    // const location = launches.map((el: I_Launch) => (el.location.name))[index];
-    // const date = launches.map((el: I_Launch) => (el.windowstart))[index];
 	return (
-        <article className="events">
+        <article className="events" id={id}>
             <List>
                 <ListItem>
                     <ListItemText primary={name}/>
@@ -34,7 +32,7 @@ export const LaunchEvent: React.FC<I_Props> = ({index, name, location, date}) =>
                     <ListItemText primary="Location" secondary={location} />
                 </ListItem>
             </List>
-            {(index > 0 && index < 4) && <div className="divider"></div>}
+            {index != maxIndex-1 && <div className="divider"></div>}
         </article>
 	);
 }

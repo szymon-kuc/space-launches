@@ -11,13 +11,12 @@ export const Upcoming: React.FC = () => {
     const name = index.map((i: number) => launches.map((el: I_Launch) => (el.name))[i]);
     const location = index.map((i: number) => launches.map((el: I_Launch) => (el.location.name))[i]);
     const date = index.map((i: number) => launches.map((el: I_Launch) => (el.windowstart))[i]);
-      console.log(launches);
 	return (
             <section>
                   <Typography variant="h4" gutterBottom className="section-heading">
                         UPCOMING
                   </Typography>
-                  {index.map((i: number) => (<LaunchEvent index={i} name={name[i-1]} location={location[i-1]} date={date[i-1]}/>))}
+                  {index.map((i: number) => (<LaunchEvent key={i} index={i} maxIndex={launches.length} name={name[i-1]} location={location[i-1]} date={date[i-1]} />))}
             </section>
 	);
 }

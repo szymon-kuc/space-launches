@@ -20,7 +20,7 @@ export interface I_Launch {
     failreason: any,
     tbdate: number,
     probability: number,
-    location: Array<any>,
+    location: Array<I_Location>,
     rocket: Array<any>,
     missions: Array<any>,
     lsp: Array<any>
@@ -29,4 +29,7 @@ export interface I_Launch {
 export interface I_Launches {
     launches: Array<I_Launch>,
     date: Array<I_Launch>
+}
+interface I_Location {
+    name: Array<string>
 }
