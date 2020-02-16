@@ -30,3 +30,12 @@ a:hover{
     width: 95%;
     margin: 0 auto;
 }
+
+.search {
+    margin: 5px;
+}
+
+  .search-icon:hover {
+    color: #3f51b5;
+    cursor: pointer;
+  }
