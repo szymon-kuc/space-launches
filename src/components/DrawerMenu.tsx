@@ -1,12 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import List from '@material-ui/core/List';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Search } from './Search';
 
 const useStyles = makeStyles({
   list: {
@@ -45,15 +42,7 @@ export default function DrawerMenu() {
       className={classes.list}
       role="presentation"
     >
-      <List>
-      <div className="search">
-          <OutlinedInput placeholder="Search…" inputProps={{ 'aria-label': 'description' }} endAdornment={
-            <InputAdornment position="end" >
-              <SearchIcon className="search-icon" onClick={toggleDrawer('left', false)}/>
-            </InputAdornment>
-          } />
-          </div>
-      </List>
+      <Search toggle={toggleDrawer("left", false)}/>
     </div>
   );
   return (
