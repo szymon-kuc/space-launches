@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import SearchIcon from '@material-ui/icons/Search';
 import { fetchLaunchesByName } from '../actions/getLaunchesAction';
-import {I_Launches } from '../interfaces';
 
 interface I_Props {
     toggle?: Function;
@@ -15,9 +14,6 @@ export const Search: React.FC<I_Props> = ({toggle}) => {
     const dispatch = useDispatch();
     const launchesAction = (name: string) => dispatch(fetchLaunchesByName(name));
 
-    const launches = useSelector((state: I_Launches) => state.name);
-
-    console.log(launches);
     const onClick = () => {
         launchesAction(txt);
         if(toggle != undefined){

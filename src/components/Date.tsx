@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import Typography from '@material-ui/core/Typography';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,9 +6,18 @@ import { fetchLaunchesByDate } from '../actions/getLaunchesAction';
 import { I_Launches, I_Launch } from 'interfaces';
 import { LaunchEvent } from './LaunchEvent';
 
-export const Date: React.FC = () => {
+export const Date_Calendar: React.FC = () => {
     
     const [date, setDate] = useState();
+    let newTime = new Date().toLocaleString(navigator.language, {hour: '2-digit', minute:'2-digit'});
+    const [time, setTime] = useState(newTime);
+    const isMobile = window.innerWidth < 630;
+
+    useEffect(() => {
+            setInterval(() => {
+                setTime(new Date().toLocaleString(navigator.language, {hour: '2-digit', minute:'2-digit', second:'2-digit'}));
+            }, 1000)
+      });
 
     const dispatch = useDispatch();
     const launchesAction = (formatted_date: any) => dispatch(fetchLaunchesByDate(formatted_date));
@@ -33,11 +42,16 @@ export const Date: React.FC = () => {
     } 
 
     return (
-            <section>
+            <section className="date">
+                {isMobile && 
                  <Typography variant="h4" gutterBottom className="section-heading">
                         SEARCH
-                  </Typography>
-                <a href="#space-event"><Calendar onChange={onChange} value={date}/></a>
+                  </Typography>}
+                  {!isMobile && 
+                 <Typography variant="h4" gutterBottom className="section-heading">
+                    {time}
+                  </Typography>}
+                <a href="#space-event"><Calendar className="calendar" onChange={onChange} value={date}/></a>
                 {launches.map((_el:any, index: number) => (<LaunchEvent key={index} index={index} maxIndex={launches.length} name={name[index]} location={location[index]} date={launchDate[index]} id="space-event"/>))}
             </section>
             

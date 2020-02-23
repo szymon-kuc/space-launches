@@ -11,9 +11,9 @@ export const Live: React.FC = () => {
       const launches = useSelector((state: I_Launches) => state.launches);
       let videoId: string | undefined = launches.map((el: I_Launch) => (el.vidURLs[0]))[0];
 
-    const name = launches.map((el: I_Launch) => (el.name))[0];
-    const location = launches.map((el: I_Launch) => (el.location.name))[0];
-    const date = launches.map((el: I_Launch) => (el.windowstart))[0];
+      const name = launches.map((el: I_Launch) => (el.name))[0];
+      const location = launches.map((el: I_Launch) => (el.location.name))[0];
+      const date = launches.map((el: I_Launch) => (el.windowstart))[0];
 
       useEffect(() => {
             if(videoId != undefined){
@@ -25,10 +25,11 @@ export const Live: React.FC = () => {
 	return (
             <section>
                   <Typography variant="h4" gutterBottom className="section-heading">
-                        LIVE NOW
+                        LIVE NOW/NEAR
                   </Typography>
                   <div>
-                        <iframe id="ytplayer" src={src} frameBorder="0" allowFullScreen />
+                        {videoId!= undefined && <iframe id="ytplayer" src={src} frameBorder="0" allowFullScreen />}
+                        {videoId == undefined && <div className="undefined-video"></div>}
                   </div>
                   <LaunchEvent index={0} maxIndex={1} name={name} date={date} location={location}/>
             </section>
