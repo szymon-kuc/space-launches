@@ -26,6 +26,9 @@ a:hover{
     background-position: center;
     margin-bottom: 20px;
 }
+.calendar{
+    margin: 0 auto;
+}
 @media only screen and (min-width: 992px) {
     #ytplayer{
         width: 720px;
