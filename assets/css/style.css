@@ -29,6 +29,16 @@ a:hover{
 .calendar{
     margin: 0 auto;
 }
+.events {
+    color: white;
+    background-color: #2D41B3;
+    margin: 10px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 4px 0.5px rgba(0,0,0,0.75);
+}
+.MuiTypography-colorTextSecondary {
+    color:rgb(219, 216, 216) !important;
+}
 @media only screen and (min-width: 992px) {
     #ytplayer{
         width: 720px;
@@ -37,9 +47,6 @@ a:hover{
     .undefined-video {
         width: 720px;
         margin-left: 20px;
-    }
-    .events {
-        width: 40%;
     }
     .live-date {
         display: flex;
@@ -51,6 +58,14 @@ a:hover{
     .calendar {
         margin-top: 50px;
     }
+    .upcoming {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .search-results {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
   }
 
 .section-heading {
@@ -58,15 +73,6 @@ a:hover{
     padding-top: 30px;
     padding-bottom: 20px;
 }
-
-.divider {
-    border-bottom: 2px solid #3f51b5;
-    padding-top: 10px;
-    margin-bottom: 10px;
-    width: 95%;
-    margin: 0 auto;
-}
-
 .search {
     margin: 5px;
 }

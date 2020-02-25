@@ -3,8 +3,6 @@ import { useSelector} from 'react-redux';
 import {I_Launches, I_Launch } from '../interfaces';
 import { LaunchEvent } from './LaunchEvent';
 
-
-
 export const SearchResults: React.FC = () => {
 
     let name: Array<string> = [];
@@ -20,8 +18,8 @@ export const SearchResults: React.FC = () => {
     }
 
 	return (
-        <>
+        <section className="search-results">
             {launches.map((_el:any, index: number) => (<LaunchEvent key={index} index={index} maxIndex={launches.length} name={name[index]} location={location[index]} date={launchDate[index]} />))}
-        </>
+        </section>
 	);
 }

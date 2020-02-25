@@ -23,7 +23,7 @@ export const Menu: React.FC = () => {
           <Typography variant="h5" className="header-txt">
             SPACE LAUNCHES
           </Typography>
-          {!isMobile && <><Search /> <HomeIcon className="home-icon"/></>}
+          {!isMobile && <><Search /> <HomeIcon className="home-icon" onClick={() => window.location.reload()}/></>}
         </Toolbar>
       </AppBar>
 	);
