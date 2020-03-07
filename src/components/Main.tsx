@@ -27,7 +27,7 @@ export const Main: React.FC = () => {
                 {isMobile ? <> 
                     <Live />
                     <Upcoming />
-                    <Date_Calendar />
+                    <Date_Calendar launchesDate={launchesDate}/>
                 </>: <>
                     <div className="live-date">
                         <Live />
