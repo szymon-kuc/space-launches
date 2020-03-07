@@ -1,9 +1,13 @@
 body {
-    margin: 0px
+    margin: 0px;
+    font-family: sans-serif;
 }
 a{
     text-decoration: none;
     color: black;
+}
+p {
+    color: red;
 }
 .header-txt{
     padding-left: 10px;
@@ -49,11 +53,9 @@ a:hover{
         margin-left: 20px;
     }
     .live-date {
-        display: flex;
-    }
-    .date{
-        margin-left: auto;
-        padding-right: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
     }
     .calendar {
         margin-top: 50px;

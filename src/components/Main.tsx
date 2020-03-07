@@ -31,7 +31,7 @@ export const Main: React.FC = () => {
                 </>: <>
                     <div className="live-date">
                         <Live />
-                        <Date_Calendar />
+                        <Date_Calendar  launchesDate={launchesDate}/>
                     </div>
                     {launchesDate.length == 0 ? <Upcoming /> : <DateSearchResults />}
                     

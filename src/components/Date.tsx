@@ -5,9 +5,14 @@ import { useDispatch } from 'react-redux';
 import { fetchLaunchesByDate } from '../actions/getLaunchesAction';
 import { DateSearchResults } from './DateSearchResults'
 
-export const Date_Calendar: React.FC = () => {
+interface I_Date_Calender_Props {
+    lauchesDate?: any;
+}
+
+export const Date_Calendar: React.FC<I_Date_Calender_Props> = ({launchesDate}: any) => {
     
     const [date, setDate] = useState();
+    const [err, setErr] = useState('');
     let newTime = new Date().toLocaleString(navigator.language, {hour: '2-digit', minute:'2-digit'});
     const [time, setTime] = useState(newTime);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 630);
@@ -28,6 +33,7 @@ export const Date_Calendar: React.FC = () => {
         let date = e.getDate() < 10 ? ('0' + e.getDate()) : e.getDate();
         launchesAction(e.getFullYear() + "-" + month + "-" + date);
         setDate(e);
+        setErr('Sorry, there are no launches at this date!');
     } 
 
     return (
@@ -40,7 +46,8 @@ export const Date_Calendar: React.FC = () => {
                  <Typography variant="h4" gutterBottom className="section-heading">
                     {time}
                   </Typography>}
-                <a href="#space-event"><Calendar className="calendar" onChange={onChange} value={date}/></a>
+                <Calendar className="calendar" onChange={onChange} value={date}/>
+                {launchesDate.length == 0 && <p>{err}</p>}
                 {isMobile && <DateSearchResults />}
             </section>
             

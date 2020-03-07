@@ -24,7 +24,7 @@ export const fetchLaunchesByDate = (date: string) => {
 
 export const fetchLaunchesByName = (name: string) => {
     return (dispatch: any) => {
-        fetch('https://launchlibrary.net/1.3/launch/'+ name)
+        fetch('https://launchlibrary.net/1.3/launch/'+ name + '?next=10')
         .then(res => res.json())
         .then(res => dispatch({
             type: FETCH_LAUNCHES_BY_NAME,
